@@ -1,3 +1,11 @@
+/*
+Author: Anita Prova
+Course: CSCI-135
+Instructor: Genady Maryash
+Assignment: Project 1 Task A
+The program prints the direction.
+*/
+
 #include <iostream>
 #include <string>
 using namespace std;
