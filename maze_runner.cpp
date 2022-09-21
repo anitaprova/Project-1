@@ -1,3 +1,11 @@
+/*
+Author: Anita Prova
+Course: CSCI-135
+Instructor: Genady Maryash
+Assignment: Project 1 Task 2
+The program prints whether you are out of the maze or not.
+*/
+
 #include <iostream>
 #include <string>
 using namespace std;
