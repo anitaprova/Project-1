@@ -20,19 +20,25 @@ int main()
 	int curr_col = 1;
 
 	while(cin >> x){
-		if(x == "R" && maze[curr_row][curr_col + 1] != 1) {
-			curr_col++;	
+		string arr[x.size()];
+		for (int i = 0; i < x.size(); i++) { //puts all the letters into an array
+			arr[i] = x[i];
 		}
-		else if(x == "L" && maze[curr_row][curr_col - 1] != 1) {
-			curr_col--;
+		
+		for (string i: arr) { //for each element in the array
+			if(i == "R" && maze[curr_row][curr_col + 1] != 1) {
+				curr_col++;	
+			}
+			else if(i == "L" && maze[curr_row][curr_col - 1] != 1) {
+				curr_col--;
+			}
+			else if(i == "U" && maze[curr_row - 1][curr_col] != 1) {
+				curr_row--;
+			}
+			else if(i == "D" && maze[curr_row + 1][curr_col] != 1) {
+				curr_row++;
+			}
 		}
-		else if(x == "U" && maze[curr_row - 1][curr_col] != 1) {
-			curr_row--;
-		}
-		else if(x == "D" && maze[curr_row + 1][curr_col] != 1) {
-			curr_row++;
-		}
-		cout << curr_row << " " << curr_col << endl;
 	}
 
 	if (curr_row == end_row && curr_col == end_col) {
