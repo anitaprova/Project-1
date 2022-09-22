@@ -24,6 +24,7 @@ int main()
 		string arr[x.size()];
                 for (int i = 0; i < x.size(); i++) { //puts all the letters into an array
                         arr[i] = x[i];
+			//std::cout << arr[i] << " ";
                 }
 
                 for (string i: arr) { //for each element in the array
@@ -50,6 +51,12 @@ int main()
                         else if(i == "D" && maze[curr_row + 1][curr_col] != 1) {
                                 curr_row++;
                         }
+			else {
+				curr_row = curr_row;
+				curr_col = curr_col;
+			}
+			//cout << curr_row << ":" << curr_col << "  ";
+
                 }
         }
 }
