@@ -21,13 +21,24 @@ int main()
         int curr_col = 1;
 
         while(cin >> x){
-                string arr[x.size()];
+		string arr[x.size()];
                 for (int i = 0; i < x.size(); i++) { //puts all the letters into an array
                         arr[i] = x[i];
                 }
 
                 for (string i: arr) { //for each element in the array
-                        if(i == "R" && maze[curr_row][curr_col + 1] != 1) {
+                        if(i == ";") {
+			       if (curr_row == end_row && curr_col == end_col) {
+					cout << "You got out of the maze." << endl;
+				}
+			        else {
+					cout << "You are stuck in the maze." << endl;
+				}
+				curr_row = 0;
+				curr_col = 1;
+			}	       
+
+			if(i == "R" && maze[curr_row][curr_col + 1] != 1) {
                                 curr_col++;
                         }
                         else if(i == "L" && maze[curr_row][curr_col - 1] != 1) {
@@ -40,12 +51,5 @@ int main()
                                 curr_row++;
                         }
                 }
-        }
-
-        if (curr_row == end_row && curr_col == end_col) {
-                cout << "You got out of the maze." << endl;
-        }
-        else {
-                cout << "You are stuck in the maze." << endl;
         }
 }
